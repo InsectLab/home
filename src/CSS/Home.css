@@ -1,0 +1,17 @@
+.homeWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.homeWrapper h1 {
+    margin: 30px auto;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    flex-direction: column;
+    width: 70vw;
+}
