@@ -42,8 +42,8 @@ const Carousel = () => {
                             </div>
                         )
                     })}
-                    <a className="prev" onClick={decreaseIndex}>❮</a>
-                    <a className="next" onClick={increaseIndex}>❯</a>
+                    <a className="prev" onClick={decreaseIndex}><span className="material-symbols-outlined" style={{transform: "scaleX(-1)"}}>arrow_forward_ios</span></a>
+                    <a className="next" onClick={increaseIndex}><span className="material-symbols-outlined">arrow_forward_ios</span></a>
                 </div>}
             </div>
             <div className="dots">

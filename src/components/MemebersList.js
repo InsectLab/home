@@ -65,11 +65,10 @@ const MembersList = () => {
                     return (
                         (member.Name.toLowerCase().includes(inputValue.toLowerCase()) && (RoleValue === "" || member.Role === RoleValue) && (activeValue === "" || ((activeValue === "Yes" && member.End_Year === "Current") || (activeValue === "No" && member.End_Year !== "Current")))) &&
                         <div className={`${darkMode ? "memberItem memberItemDark" : "memberItem"}`}>
-                            {console.log("member:" + member)}
                             <div className='img'><img src={`${member.Photo ? member.Photo : "https://static.wixstatic.com/media/56112d_1efe4d20db6249f1a5876256376aabbc~mv2.gif"}`} alt="" /></div>
                             <div className="content">
                                 {/* <span className='name'>{member.Name}<p>&nbsp;{` (${member.Start_Year} - ${member.End_Year})`}</p></span> */}
-                                <Link to={`profile/${i}`}><span className={`${darkMode ? "name nameDark" : "name"}`}>{`${member.Name} (${member.Start_Year} - ${member.End_Year})`}</span></Link>
+                                <Link to={`profile/${i}`}><span className={`${darkMode ? "name nameDark" : "name"}`}>{`${member.Title} ${member.Name} (${member.Start_Year} - ${member.End_Year})`}</span></Link>
                                 <span className='info'>
                                     <div className="role">{member.Role}</div>
                                     &nbsp;

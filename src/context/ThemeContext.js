@@ -9,7 +9,7 @@ export const ThemeContextProvider = ({ children }) => {
         /* document.cookie = `darkmode=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`; */
     }, []);
 
-    const [darkMode, setDarkMode] = useState(document.cookie.length > 0 ? (document.cookie === "true" ? true : false) : false );
+    const [darkMode, setDarkMode] = useState(document.cookie.length > 0 ? (document.cookie === "true" ? true : false) : true );
 
 
     return (
