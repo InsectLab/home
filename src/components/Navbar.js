@@ -27,9 +27,10 @@ const Navbar = () => {
             <div className="links">
                 <NavLink to={"/"}><span>Home</span></NavLink>
                 <NavLink to={"/reserch"}><span>Reserch</span></NavLink>
-                <span>Publications</span>
+                <NavLink to={"/publications"}><span>Publications</span></NavLink>
                 <NavLink to={"/members"}><span>Lab members</span></NavLink>
                 <NavLink to={"/contact"}><span>Contact</span></NavLink>
+                <NavLink to={"/positions"}><span>Open posiotions</span></NavLink>
             </div>
 
             <div className='darkModeSwitch' onClick={darkModeSwitch}>

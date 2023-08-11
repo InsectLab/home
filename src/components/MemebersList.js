@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import { DBContext } from "../context/DBContext";
 import { Link } from "react-router-dom";
@@ -19,6 +19,16 @@ const MembersList = () => {
     const [inputValue, setInputValue] = useState("");
     const [RoleValue, setRoleValue] = useState("");
     const [activeValue, setActiveValue] = useState("");
+
+    const [svgColor, setSvgColor] = useState("");
+
+    useEffect(() => {
+        if (darkMode) {
+            setSvgColor("rgb(187 222 251)");
+        } else {
+            setSvgColor("#000664");
+        }
+    }, darkMode)
 
     const updateInputValue = (e) => {
         console.log(e.target.value);
@@ -73,12 +83,12 @@ const MembersList = () => {
                                     <div className="role">{member.Role}</div>
                                     &nbsp;
                                     <div className="socials">
-                                        {member.Email.length !== 0 && <Link to={member.Email} target="_blank"><Email color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
-                                        {member.Scholar.length !== 0 && <Link to={member.Scholar} target="_blank"><Scholar color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
-                                        {member.Linkedin.length !== 0 && <Link to={member.Linkedin} target="_blank"><Linkedin color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
-                                        {member.ORCID.length !== 0 && <Link to={member.ORCID} target="_blank"><ORCID color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
-                                        {member.GitHub.length !== 0 && <Link to={member.GitHub} target="_blank"><Github color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
-                                        {member.Personal_Page.length !== 0 && <Link to={member.Personal_Page} target="_blank"><Personal color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
+                                        {member.Email.length !== 0 && <Link to={member.Email} target="_blank"><Email color={svgColor}/></Link>}
+                                        {member.Scholar.length !== 0 && <Link to={member.Scholar} target="_blank"><Scholar color={svgColor}/></Link>}
+                                        {member.Linkedin.length !== 0 && <Link to={member.Linkedin} target="_blank"><Linkedin color={svgColor}/></Link>}
+                                        {member.ORCID.length !== 0 && <Link to={member.ORCID} target="_blank"><ORCID color={svgColor}/></Link>}
+                                        {member.GitHub.length !== 0 && <Link to={member.GitHub} target="_blank"><Github color={svgColor}/></Link>}
+                                        {member.Personal_Page.length !== 0 && <Link to={member.Personal_Page} target="_blank"><Personal color={svgColor}/></Link>}
                                     </div>
                                 </span>  
                                 <div className="interest">
