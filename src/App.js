@@ -10,6 +10,7 @@ import Home from "./Pages/Home";
 import Reserch from "./Pages/Reserch";
 import Members from './Pages/Members';
 import Contact from './Pages/Contact';
+import Publications from './Pages/Publications';
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
           <Routes>
             <Route path='/*' Component={Home} />
             <Route path='/reserch/*' Component={Reserch} />
-            {/* <Route path='/publication' Component={Reserch} /> */}
+            <Route path='/publications' Component={Publications} />
             <Route path='/members/*' Component={Members} />
             <Route path='/contact' Component={Contact} />
           </Routes>

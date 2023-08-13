@@ -1,11 +1,23 @@
-import { Route, Routes } from 'react-router-dom';
+import { toBibtex } from "bibtex-parse-js";
+import {BibtexParser} from "bibtex-js-parser";
+
+import { DBContext } from "../context/DBContext";
+import { useContext } from "react";
 
 const Publications = () => {
+
+    const {members} = useContext(DBContext);
+
     return (
-        <Routes>
-            <Route path='/' Component={MembersList} />
-            <Route path='/reserch/:id' Component={MemberProfile} />
-        </Routes>
+        <div>
+            {members && members.map((member) => {
+                return (
+                    <div>
+                        
+                    </div>
+                )
+            })}
+        </div>
     )
 }
 

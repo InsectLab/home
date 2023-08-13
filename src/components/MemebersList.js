@@ -26,9 +26,9 @@ const MembersList = () => {
         if (darkMode) {
             setSvgColor("rgb(187 222 251)");
         } else {
-            setSvgColor("#000664");
+            setSvgColor("#3391ff");
         }
-    }, darkMode)
+    }, [darkMode])
 
     const updateInputValue = (e) => {
         console.log(e.target.value);
@@ -63,11 +63,11 @@ const MembersList = () => {
                 </div>
                 <div className="searchActive">
                     <select onChange={setActiveTime}>
-                            <option value="">All time</option>
-                            <option value="Yes">Present</option>
-                            <option value="No">Past</option>
-                        </select>
-                    </div>
+                        <option value="">All time</option>
+                        <option value="Yes">Present</option>
+                        <option value="No">Past</option>
+                    </select>
+                </div>
             </div>
                 
             <div className='membersList'>

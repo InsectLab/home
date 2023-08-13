@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import { ThemeContext } from '../context/ThemeContext';
 import { DBContext } from '../context/DBContext';
 
+import {BibtexParser} from "bibtex-js-parser";
+
 import Github from "../assets/Github";
 import Scholar from "../assets/Scholar";
 import Email from "../assets/Email";
@@ -18,12 +20,20 @@ const MemberProfile = () => {
 
     const {members} = useContext(DBContext);
     const [member, setMember] = useState();
+    const [Publications, setPublications] = useState("");
 
     const { id } = useParams();
 
     useEffect(() => {
         members && setMember(members[id]);
     },[members]);
+
+    useEffect(() => {
+        member && setPublications(BibtexParser.parseToJSON(member.Publications));
+        /* member && console.log(member.Publications); */
+        member && console.log(BibtexParser.parseToJSON(member.Publications));
+    }, [member])
+
 
     return(
         <div className="memberWrapper">
@@ -86,10 +96,14 @@ const MemberProfile = () => {
                 {member.Scholar && <div className="publish">
                     <h1>Latest</h1>
                     <ul>
-                        <li>The neuromechanical control of Caenorhabditis elegans head motor behavior in a 3D environment</li>
-                        <li>The neuromechanical control of Caenorhabditis elegans head motor behavior in a 3D environment</li>
-                        <li>The neuromechanical control of Caenorhabditis elegans head motor behavior in a 3D environment</li>
-                    </ul>
+                        {Publications && Publications.map((item) => {
+                            return (
+                                <li>
+                                    {item.title}
+                                </li>
+                            )
+                        })}
+                    </ul>        
                 </div>}
             </>
             }

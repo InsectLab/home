@@ -12,7 +12,7 @@ root.render(
   <ThemeContextProvider>
     <DBContextProvider>
       <React.StrictMode>
-        <App />
+          <App />
       </React.StrictMode>
     </DBContextProvider>
   </ThemeContextProvider>
