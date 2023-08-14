@@ -24,6 +24,11 @@
     font-size: 24px;
 }
 
+.authorName {
+    border-bottom: 1px solid white;
+    margin-right: 10px;
+}
+
 .svgIcon {
     margin-right: 10px;
 }

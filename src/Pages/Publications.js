@@ -28,7 +28,23 @@ const Publications = () => {
                     return (
                         <div className="articleItem">
                             <span className="articleTitle">{<Article color={`${darkMode ? "white" : "black"}`}/>}{article.title}</span>
-                            <span className="articleAuthor">{article.author}</span>
+                            <span className="articleAuthor">
+                                {article.author.split(" and ").map((author) => {
+                                    return (
+                                        <span className="authorName">
+                                            <span>{author.split(", ")[1]}</span>
+                                            &nbsp;
+                                            <span>{author.split(", ")[0]}</span>
+                                        </span>
+                                    );
+                                })}
+                            </span>
+                            {/* {article && <span className="articleAuthor">
+                                {article.author = article.author.split(" and").map((author) => {
+                                    console.log("author: " +author)
+                                    return (console.log("1"+author.split(",")));
+                                })}
+                            </span>} */}
                             <span>{article.publisher && (`${article.publisher}  -  `)}{article.year}</span>
                         </div>
                     )
