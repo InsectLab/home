@@ -8,7 +8,7 @@
     gap: 45px;
 }
 
-.listItem {
+/* .listItem {
     position: relative;
     width: 100%;
     display: flex;
@@ -17,7 +17,40 @@
     text-align: left;
     box-shadow: 0px 26px 76px -38px rgba(0,0,0,0.75);
     background-color: #ffffff !important;
+} */
+
+/*  */
+
+.listItem {
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 26px 76px -38px rgba(0,0,0,0.75);
+
 }
+
+.listItem img {
+    max-width: 350px;
+    float: left;
+    margin-right: 15px;
+}
+
+.listItem .text {
+    text-align: left;
+    margin: 0 20px 20px 20px;
+}
+
+.listItem .text h1 {
+    font-weight: 700;
+    font-size: 38px;
+}
+
+.listItem .text p {
+    font-size: 22px;
+}
+
+/*  */
 
 .listItemDark {
     background-color: #29292b !important;
@@ -25,8 +58,8 @@
 
 .listItem .reserchImg {
     overflow: hidden;
-    min-height: 300px;
-    min-width: 450px;
+    min-height: 250px;
+    min-width: 400px;
     max-width: 500px;
 }
 

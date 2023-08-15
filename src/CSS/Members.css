@@ -148,8 +148,7 @@
 .info .socials {
     display: flex;
     flex-direction: row;
-    gap: 7px;
-    
+    margin-left: 3px;
 }
 
 .socials a {

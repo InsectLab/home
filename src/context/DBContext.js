@@ -23,8 +23,16 @@ export const DBContextProvider = ({ children }) => {
             download: true,
             header: true,
             complete: (results) => {
-                setReserches(results.data);
-                console.log(results.data);
+                results = results.data.map((item) => {
+                    console.log("Reserches1:"+results.data);
+                    if (item.Image.includes("drive.google.com/file/d/")) {
+                        return {...item, Image: `https://drive.google.com/uc?export=view&id=${item.Image.match(/\/d\/(.*?)\/view/)[1]}`}
+                    } else {
+                        return {...item}
+                    }
+                })
+                setReserches(results);
+                console.log("Reserches2:"+results);
             }
         })
     },[]);
@@ -63,6 +71,11 @@ export const DBContextProvider = ({ children }) => {
         })
     },[]);
 
+    const [publications, setPublications] = useState();
+    useEffect(() => {
+        members && setPublications(members[2].Publications)
+    },[members])
+
     /* useEffect(() => {
         reserches && console.log("1:" + reserches[4].Image.match(/\/d\/(.*?)\/view/)[1]);
         reserches && console.log("2:" + reserches[4].Image.includes("https://drive.google.com/file/d/"));
@@ -71,7 +84,7 @@ export const DBContextProvider = ({ children }) => {
 
     return (
         <DBContext.Provider value={{
-            images, reserches, members
+            images, reserches, members, publications
         }}>{ children }
         </DBContext.Provider>
     )

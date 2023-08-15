@@ -11,7 +11,7 @@ import "../CSS/Publications.css"
 const Publications = () => {
 
     const { darkMode } =useContext(ThemeContext);
-    const {members} = useContext(DBContext);
+    const {members, publications} = useContext(DBContext);
     const [Publications, setPublications] = useState("");
 
     useEffect(() => {

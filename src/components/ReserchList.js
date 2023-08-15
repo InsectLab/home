@@ -17,14 +17,11 @@ const ReserchList = () => {
                 return (
                     <Link to={`${i}`}>
                         <div className={`${darkMode ? "listItem listItemDark" : "listItem"}`}>
-                            <div className="reserchImg">
-                                <img src={reserch.Image ? reserch.Image : "https://static.wixstatic.com/media/56112d_677557a98a2d402a8c096058b3a639cf~mv2.jpg/v1/fill/w_414,h_299,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/locusts3_JPG.jpg"} alt="" />
-                            </div>
-                            <div className="reserchPreviewContent">
-                                <span className="title">{reserch.Title}</span>
-                                {reserch.Topic && <span className="topic">{reserch.Topic}</span>}
-                                <br />
-                                <span className="caption">{reserch.Caption}</span>
+                            <img src={reserch.Image ? reserch.Image : "https://static.wixstatic.com/media/56112d_677557a98a2d402a8c096058b3a639cf~mv2.jpg/v1/fill/w_414,h_299,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/locusts3_JPG.jpg"} alt="" />
+                            <div className="text">
+                                <h1>{reserch.Title}</h1>
+                                <p>{reserch.Caption}</p>
+
                             </div>
                         </div>
                     </Link>
@@ -35,3 +32,17 @@ const ReserchList = () => {
 }
 
 export default ReserchList;
+/* 
+<Link to={`${i}`}>
+    <div className={`${darkMode ? "listItem listItemDark" : "listItem"}`}>
+        <div className="reserchImg">
+            <img src={reserch.Image ? reserch.Image : "https://static.wixstatic.com/media/56112d_677557a98a2d402a8c096058b3a639cf~mv2.jpg/v1/fill/w_414,h_299,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/locusts3_JPG.jpg"} alt="" />
+        </div>
+        <div className="reserchPreviewContent">
+            <span className="title">{reserch.Title}</span>
+            {reserch.Topic && <span className="topic">{reserch.Topic}</span>}
+            <br />
+            <span className="caption">{reserch.Caption}</span>
+        </div>
+    </div>
+</Link> */
