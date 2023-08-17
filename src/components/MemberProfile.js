@@ -43,7 +43,7 @@ const MemberProfile = () => {
             <>
                 <div className="profile">
                     <div className="profileCard">
-                        <div className="image"><img src={`${member.Photo ? member.Photo : "https://static.wixstatic.com/media/56112d_1efe4d20db6249f1a5876256376aabbc~mv2.gif"}`} alt="" /></div>
+                        <img src={`${member.Photo ? member.Photo : "https://static.wixstatic.com/media/56112d_1efe4d20db6249f1a5876256376aabbc~mv2.gif"}`} alt="" />
                         <div className="name">{member.Name}</div>
                         <div className="position">{member.Title}</div>
                         <br/>
@@ -84,6 +84,14 @@ const MemberProfile = () => {
                             {member.Education && <div className="education">
                                 <h2>Education</h2>
                                 <ul>
+                                    {console.log("education" + JSON.parse(member.Education))}
+                                    {JSON.parse(member.Education).map((education) => {
+                                        return (
+                                            <li>
+                                                {console.log("1" + education)}
+                                            </li>
+                                        )
+                                    })}
                                     <li>PhD</li>
                                     <li>MSdasdassssssssssssssssssssssssssssssssssssssssssssssdasdc</li>
                                 </ul>
@@ -93,7 +101,7 @@ const MemberProfile = () => {
                 </div>
 
 
-                {member.Scholar && <div className="publish">
+                {member.Publications && <div className="publish">
                     <h1>Latest</h1>
                     <ul>
                         {Publications && Publications.map((item) => {

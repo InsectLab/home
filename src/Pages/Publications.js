@@ -21,7 +21,7 @@ const Publications = () => {
     }, [members])
 
     return (
-        <div className="publicaionsWrraper">
+        <div className={`publicaionsWrraper ${darkMode ? "publicaionsWrraperDark" : ""}`}>
             <h1>Publications</h1>
             <div className="articlesListWrraper">
                 {Publications && Publications.map((article) => {

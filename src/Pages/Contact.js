@@ -1,8 +1,14 @@
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
+
 import '../CSS/Contact.css';
 
 const Contact = () => {
+
+    const { darkMode } = useContext(ThemeContext);
+
     return (
-        <div className="contactWrraper">
+        <div className={`contactWrraper ${darkMode ? "contactWrraperDark" : ""}`}>
             <div className="contactInfo">
                 <img src="https://static.wixstatic.com/media/56112d_677557a98a2d402a8c096058b3a639cf~mv2.jpg/v1/fill/w_414,h_299,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/locusts3_JPG.jpg" alt="" />
                 <div className="info">

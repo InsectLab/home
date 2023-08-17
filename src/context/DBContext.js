@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
+import {BibtexParser} from "bibtex-js-parser";
 import Papa from "papaparse";
 
 export const DBContext = createContext();
@@ -12,7 +13,6 @@ export const DBContextProvider = ({ children }) => {
             header: true,
             complete: (results) => {
                 setImages(results.data);
-                console.log(results.data);
             }
         })
     },[])
@@ -32,7 +32,6 @@ export const DBContextProvider = ({ children }) => {
                     }
                 })
                 setReserches(results);
-                console.log("Reserches2:"+results);
             }
         })
     },[]);
@@ -65,7 +64,6 @@ export const DBContextProvider = ({ children }) => {
                         return {...item}
                     }
                 })
-                console.log("members:" + results);
                 setMembers(results);
             }
         })
@@ -73,14 +71,28 @@ export const DBContextProvider = ({ children }) => {
 
     const [publications, setPublications] = useState();
     useEffect(() => {
-        members && setPublications(members[2].Publications)
-    },[members])
+        Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vTrx5a6lcEqohu2wlApKa6DnPUmNRfYoUkRXjajieoF7PyPOrGKKQeqiROrECNHKPXAYMKZfMrLNwaB/pub?gid=900809925&single=true&output=csv", {
+            download: true,
+            header: true,
+            complete: (results) => {
+                console.log("pub:" + JSON.stringify(results, null, 2));
+                console.log("pub:" + results.data)
+                const tempResults = results.data
+                for (let i=0; i<tempResults.length; i++) {
+                    tempResults[i].Citation = BibtexParser.parseToJSON(tempResults[i].Citation)
+                }
+                setPublications(tempResults);
+                console.log("Citation" +tempResults);
+            }
+        })
+    },[])
 
-    /* useEffect(() => {
-        reserches && console.log("1:" + reserches[4].Image.match(/\/d\/(.*?)\/view/)[1]);
-        reserches && console.log("2:" + reserches[4].Image.includes("https://drive.google.com/file/d/"));
-
-    },[reserches]) */
+    useEffect(() => {
+        /* member && console.log(member.Publications); */
+        /* publications && setPublications(BibtexParser.parseToJSON(members[2].Publications));
+        publications && console.log(BibtexParser.parseToJSON(members[2].Publications)); */
+        publications && console.log("publications"+publications);
+    }, [publications])
 
     return (
         <DBContext.Provider value={{
