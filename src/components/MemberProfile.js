@@ -16,11 +16,21 @@ import '../CSS/MemberProfile.css'
 
 const MemberProfile = () => {
 
-    const { darkMode } =useContext(ThemeContext);
+    const { darkMode } = useContext(ThemeContext);
+
+    const [svgColor, setSvgColor] = useState("");
+    useEffect(() => {
+        if (darkMode) {
+            setSvgColor("rgb(187 222 251)");
+        } else {
+            setSvgColor("#1B4F72");
+        }
+    }, [darkMode])
 
     const {members} = useContext(DBContext);
     const [member, setMember] = useState();
     const [Publications, setPublications] = useState("");
+    const [education, setEducation] = useState("");
 
     const { id } = useParams();
 
@@ -32,6 +42,7 @@ const MemberProfile = () => {
         member && setPublications(BibtexParser.parseToJSON(member.Publications));
         /* member && console.log(member.Publications); */
         member && console.log(BibtexParser.parseToJSON(member.Publications));
+        member && setEducation(member.Education);
     }, [member])
 
 
@@ -44,19 +55,18 @@ const MemberProfile = () => {
                 <div className="profile">
                     <div className="profileCard">
                         <img src={`${member.Photo ? member.Photo : "https://static.wixstatic.com/media/56112d_1efe4d20db6249f1a5876256376aabbc~mv2.gif"}`} alt="" />
-                        <div className="name">{member.Name}</div>
-                        <div className="position">{member.Title}</div>
+                        <div className="name">{`${member.Title === "Professor" ? "Prof." : member.Title === "Doctor" ? "Dr." : ""} ${member.Name}`}</div>
                         <br/>
                         <div className="role">{member.Role}</div>
                         <div className="shortSummary">{member.Short_Summary}</div>
                         <br/>
                         <div className="socials">
-                            {member.Email.length !== 0 && <Link to={member.Email} target="_blank"><Email color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
-                            {member.Scholar.length !== 0 && <Link to={member.Scholar} target="_blank"><Scholar color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
-                            {member.Linkedin.length !== 0 && <Link to={member.Linkedin} target="_blank"><Linkedin color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
-                            {member.ORCID.length !== 0 && <Link to={member.ORCID} target="_blank"><ORCID color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
-                            {member.GitHub.length !== 0 && <Link to={member.GitHub} target="_blank"><Github color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
-                            {member.Personal_Page.length !== 0 && <Link to={member.Personal_Page} target="_blank"><Personal color={`${darkMode ? "rgb(187 222 251)" : "black"}`}/></Link>}
+                            {member.Email.length !== 0 && <Link to={member.Email} target="_blank"><Email color={svgColor}/></Link>}
+                            {member.Scholar.length !== 0 && <Link to={member.Scholar} target="_blank"><Scholar color={svgColor}/></Link>}
+                            {member.Linkedin.length !== 0 && <Link to={member.Linkedin} target="_blank"><Linkedin color={svgColor}/></Link>}
+                            {member.ORCID.length !== 0 && <Link to={member.ORCID} target="_blank"><ORCID color={svgColor}/></Link>}
+                            {member.GitHub.length !== 0 && <Link to={member.GitHub} target="_blank"><Github color={svgColor}/></Link>}
+                            {member.Personal_Page.length !== 0 && <Link to={member.Personal_Page} target="_blank"><Personal color={svgColor}/></Link>}
                         </div>
                     </div>
                     
@@ -84,16 +94,17 @@ const MemberProfile = () => {
                             {member.Education && <div className="education">
                                 <h2>Education</h2>
                                 <ul>
-                                    {console.log("education" + JSON.parse(member.Education))}
-                                    {JSON.parse(member.Education).map((education) => {
+
+                                    {console.log("education1 " + typeof(education))}
+                                    {console.log("education " + education)}
+                                    {/* {console.log("education2" + education)} */}
+                                    {/* {education.map((education) => {
                                         return (
                                             <li>
-                                                {console.log("1" + education)}
+                                                {education}
                                             </li>
                                         )
-                                    })}
-                                    <li>PhD</li>
-                                    <li>MSdasdassssssssssssssssssssssssssssssssssssssssssssssdasdc</li>
+                                    })} */}
                                 </ul>
                             </div>}
                         </div>

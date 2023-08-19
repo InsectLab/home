@@ -26,7 +26,7 @@ const MembersList = () => {
         if (darkMode) {
             setSvgColor("rgb(187 222 251)");
         } else {
-            setSvgColor("#3391ff");
+            setSvgColor("#1B4F72");
         }
     }, [darkMode])
 
@@ -78,7 +78,7 @@ const MembersList = () => {
                             <div className='img'><img src={`${member.Photo ? member.Photo : "https://static.wixstatic.com/media/56112d_1efe4d20db6249f1a5876256376aabbc~mv2.gif"}`} alt="" /></div>
                             <div className="content">
                                 {/* <span className='name'>{member.Name}<p>&nbsp;{` (${member.Start_Year} - ${member.End_Year})`}</p></span> */}
-                                <Link to={`profile/${i}`}><span className={`${darkMode ? "name nameDark" : "name"}`}>{`${member.Title} ${member.Name} (${member.Start_Year} - ${member.End_Year})`}</span></Link>
+                                <Link to={`profile/${i}`}><span className={`${darkMode ? "name nameDark" : "name"}`}>{`${member.Title === "Professor" ? "Prof." : member.Title === "Doctor" ? "Dr." : ""} ${member.Name} (${member.Start_Year} - ${member.End_Year})`}</span></Link>
                                 <span className='info'>
                                     <div className="role">{member.Role}</div>
                                     &nbsp;

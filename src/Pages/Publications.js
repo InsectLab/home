@@ -29,12 +29,13 @@ const Publications = () => {
                         <div className="articleItem">
                             <span className="articleTitle">{<Article color={`${darkMode ? "white" : "black"}`}/>}{article.title}</span>
                             <span className="articleAuthor">
-                                {article.author.split(" and ").map((author) => {
+                                {article.author.split(" and ").map((author,i) => {
                                     return (
                                         <span className="authorName">
                                             <span>{author.split(", ")[1]}</span>
                                             &nbsp;
                                             <span>{author.split(", ")[0]}</span>
+                                            {i<article.author.split(" and ").length -1 && ","}
                                         </span>
                                     );
                                 })}
