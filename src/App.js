@@ -11,6 +11,7 @@ import Reserch from "./Pages/Reserch";
 import Members from './Pages/Members';
 import Contact from './Pages/Contact';
 import Publications from './Pages/Publications';
+import Test from './components/Test';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <Route path='/publications' Component={Publications} />
             <Route path='/members/*' Component={Members} />
             <Route path='/contact' Component={Contact} />
+            <Route path='/positions' Component={Test} />
           </Routes>
         </div>
       </div>

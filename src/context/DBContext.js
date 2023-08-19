@@ -101,16 +101,8 @@ export const DBContextProvider = ({ children }) => {
             download: true,
             header: true,
             complete: (results) => {
-                console.log("pub:" + JSON.stringify(results.data, null, 2));
-                /* console.log("pub:" + results.data.Citation) */
-                /* const tempResults = results.data
-                for (let i=0; i<tempResults.length; i++) {
-                    tempResults[i].Citation = BibtexParser.parseToJSON(tempResults[i].Citation)
-                    tempResults[i].Citation[0].Link = results.Link
-                    console.log("321" + JSON.stringify(tempResults[i].Citation))
-                } */
-                /* setPublications(tempResults);
-                console.log("Citation" +tempResults); */
+                console.log(results);
+                setPublications(results.data);
             }
         })
     },[])
@@ -119,7 +111,9 @@ export const DBContextProvider = ({ children }) => {
         /* member && console.log(member.Publications); */
         /* publications && setPublications(BibtexParser.parseToJSON(members[2].Publications));
         publications && console.log(BibtexParser.parseToJSON(members[2].Publications)); */
-        publications && console.log("publications"+publications);
+        /* publications && console.log("publications"+publications); */
+        publications && console.log("111:" + JSON.stringify(publications[0].Citation))
+        publications && console.log("222:" + JSON.stringify(BibtexParser.parseToJSON(publications[0].Citation)))
     }, [publications])
 
     return (

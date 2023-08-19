@@ -96,15 +96,15 @@ const MemberProfile = () => {
                                 <ul>
 
                                     {console.log("education1 " + typeof(education))}
-                                    {console.log("education " + education)}
+                                    {console.log("education " + member.Education.match(/\[(.*?)\]/))}
                                     {/* {console.log("education2" + education)} */}
-                                    {/* {education.map((education) => {
+                                    {member.Education.match(/\[[^\]]*\]/g).map((education) => {
                                         return (
                                             <li>
-                                                {education}
+                                                {education.slice(1, -1)}
                                             </li>
                                         )
-                                    })} */}
+                                    })}
                                 </ul>
                             </div>}
                         </div>
