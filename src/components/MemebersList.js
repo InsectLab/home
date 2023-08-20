@@ -9,8 +9,6 @@ import Linkedin from "../assets/Linkedin";
 import ORCID from "../assets/ORCID";
 import Personal from "../assets/Personal";
 
-/* import { icon } from '@fortawesome/fontawesome-svg-core/import.macro' */
-
 const MembersList = () => {
 
     const {darkMode} = useContext(ThemeContext);

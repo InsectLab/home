@@ -62,6 +62,10 @@ a, a:visited {
     height: 100%;
 }
 
+.navbarDark .logo img {
+    filter: invert(100%);
+}
+
 .darkModeSwitch {
     height: 100%;
     display: flex;

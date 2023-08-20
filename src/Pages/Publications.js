@@ -29,8 +29,7 @@ const Publications = () => {
                     console.log("777: " + JSON.stringify(BibtexParser.parseToJSON(article.Citation)[0]))
                     var temp = BibtexParser.parseToJSON(article.Citation)
                     console.log("temp:" + JSON.stringify(temp[0].author));
-                    /* temp.link = article.Link
- */
+                    /* temp.link = article.Link*/
 
                     return (
                         <div className="articleItem">

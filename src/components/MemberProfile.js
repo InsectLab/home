@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { BibtexParser } from "bibtex-js-parser";
 import { ThemeContext } from '../context/ThemeContext';
 import { DBContext } from '../context/DBContext';
-
-import {BibtexParser} from "bibtex-js-parser";
 
 import Github from "../assets/Github";
 import Scholar from "../assets/Scholar";
