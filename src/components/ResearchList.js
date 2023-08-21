@@ -6,21 +6,21 @@ import { DBContext } from '../context/DBContext';
 
 import '../CSS/ReserchList.css';
 
-const ReserchList = () => {
+const ResearchList = () => {
 
     const {darkMode} = useContext(ThemeContext);
-    const {reserches} = useContext(DBContext);
+    const {researches} = useContext(DBContext);
 
     return (
         <div className="reserchListWrapper">
-            {reserches && reserches.map((reserch,i) => {
+            {researches && researches.map((research,i) => {
                 return (
                     <Link to={`${i}`}>
                         <div className={`${darkMode ? "listItem listItemDark" : "listItem"}`}>
-                            <img src={reserch.Image ? reserch.Image : "https://static.wixstatic.com/media/56112d_677557a98a2d402a8c096058b3a639cf~mv2.jpg/v1/fill/w_414,h_299,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/locusts3_JPG.jpg"} alt="" />
+                            <img src={research.Image1 ? research.Image1 : "https://static.wixstatic.com/media/56112d_677557a98a2d402a8c096058b3a639cf~mv2.jpg/v1/fill/w_414,h_299,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/locusts3_JPG.jpg"} alt="" />
                             <div className="text">
-                                <h1>{reserch.Title}</h1>
-                                <p>{reserch.Caption}</p>
+                                <h1>{research.Title}</h1>
+                                <p>{research.Caption1}</p>
 
                             </div>
                         </div>
@@ -31,7 +31,7 @@ const ReserchList = () => {
     )
 }
 
-export default ReserchList;
+export default ResearchList;
 /* 
 <Link to={`${i}`}>
     <div className={`${darkMode ? "listItem listItemDark" : "listItem"}`}>

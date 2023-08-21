@@ -26,7 +26,7 @@ const Navbar = () => {
             <span>Insect Lab@TAU.</span>
             <div className="links">
                 <NavLink to={"/home"}><span>Home</span></NavLink>
-                <NavLink to={"/reserch"}><span>Reserch</span></NavLink>
+                <NavLink to={"/research"}><span>Research</span></NavLink>
                 <NavLink to={"/publications"}><span>Publications</span></NavLink>
                 <NavLink to={"/members"}><span>Lab members</span></NavLink>
                 <NavLink to={"/contact"}><span>Contact</span></NavLink>

@@ -1,4 +1,4 @@
-const ReserchPage = () => {
+const ResearchPage = () => {
     return (
         <div>
             test
@@ -6,4 +6,4 @@ const ReserchPage = () => {
     )
 }
 
-export default ReserchPage;
+export default ResearchPage;

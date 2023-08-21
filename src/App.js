@@ -7,7 +7,7 @@ import { ThemeContext } from './context/ThemeContext';
 
 import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
-import Reserch from "./Pages/Reserch";
+import Research from "./Pages/Research";
 import Members from './Pages/Members';
 import Contact from './Pages/Contact';
 import Publications from './Pages/Publications';
@@ -26,7 +26,7 @@ function App() {
         <div className={`${darkMode ? "bodyDark" : "body"}`}>
           <Routes>
             <Route path='/*' Component={Home} />
-            <Route path='/reserch/*' Component={Reserch} />
+            <Route path='/research/*' Component={Research} />
             <Route path='/publications' Component={Publications} />
             <Route path='/members/*' Component={Members} />
             <Route path='/contact' Component={Contact} />
