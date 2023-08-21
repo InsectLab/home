@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from 'react';
-import {BibtexParser} from "bibtex-js-parser";
 
 import Papa from "papaparse";
 
@@ -25,7 +24,6 @@ export const DBContextProvider = ({ children }) => {
             header: true,
             complete: (results) => {
                 results = results.data.map((item) => {
-                    console.log("Reserches1:"+results.data);
                     if (item.Image.includes("drive.google.com/file/d/")) {
                         return {...item, Image: `https://drive.google.com/uc?export=view&id=${item.Image.match(/\/d\/(.*?)\/view/)[1]}`}
                     } else {
@@ -76,19 +74,15 @@ export const DBContextProvider = ({ children }) => {
             download: true,
             header: true,
             complete: (results) => {
-                console.log(results);
-                setPublications(results.data);
+                let publications_temp = results.data.map(x => x.Citation).join("\n\n");
+                publications_temp = publications_temp.replaceAll('\\&', '&');
+                setPublications(publications_temp);
             }
         })
     },[])
 
     useEffect(() => {
-        /* member && console.log(member.Publications); */
-        /* publications && setPublications(BibtexParser.parseToJSON(members[2].Publications));
-        publications && console.log(BibtexParser.parseToJSON(members[2].Publications)); */
-        /* publications && console.log("publications"+publications); */
-        publications && console.log("111:" + JSON.stringify(publications[0].Citation))
-        publications && console.log("222:" + JSON.stringify(BibtexParser.parseToJSON(publications[0].Citation)))
+        /* publications && console.log("publications: " + publications); */
     }, [publications])
 
     return (

@@ -40,7 +40,7 @@ const MemberProfile = () => {
     useEffect(() => {
         member && setPublications(BibtexParser.parseToJSON(member.Publications));
         /* member && console.log(member.Publications); */
-        member && console.log(BibtexParser.parseToJSON(member.Publications));
+        member && console.log("Members:", member.Publications);
         member && setEducation(member.Education);
     }, [member])
 

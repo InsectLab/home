@@ -66,6 +66,10 @@ a, a:visited {
     filter: invert(100%);
 }
 
+.navbar > span {
+    margin: auto 0;
+}
+
 .darkModeSwitch {
     height: 100%;
     display: flex;

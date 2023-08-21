@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
 import '../CSS/Contact.css';
+import { Link } from "react-router-dom";
 
 const Contact = () => {
 
@@ -24,9 +25,11 @@ const Contact = () => {
                 </div>
             </div>
             <div className="institutions">
-                <img src="https://static.wixstatic.com/media/56112d_aa1957bcb64a444985fac0e07428e3a3~mv2.png/v1/fill/w_168,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Picture1.png" alt="" />
-                <img src="https://static.wixstatic.com/media/56112d_e22b3372ced44573b39ac1eea4b78d73~mv2.png/v1/fill/w_174,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Picture2.png" alt="" />
-                <img src="https://static.wixstatic.com/media/56112d_e7d3896cd4a8425491e9567b3d991002~mv2.png/v1/fill/w_157,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Picture3.png" alt="" />
+                {/* <img src="https://static.wixstatic.com/media/56112d_aa1957bcb64a444985fac0e07428e3a3~mv2.png/v1/fill/w_168,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Picture1.png" alt="" /> */}
+                <Link to="https://english.tau.ac.il/" target="_blank"><img src='https://nano.tau.ac.il/sites/shtans1-english.tau.ac.il/files/media_server/Nano/Summer%20School/Tel%20Aviv%20University%20%20-%20Northwestern%20University%20Nano%20Initiative%20-%20Logo.png'></img></Link>
+                <img src='https://www.aftau.org/wp-content/uploads/2020/07/Wise.png'></img>
+                {/* <img src="https://static.wixstatic.com/media/56112d_e22b3372ced44573b39ac1eea4b78d73~mv2.png/v1/fill/w_174,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Picture2.png" alt="" /> */}
+                {/* <img src="https://static.wixstatic.com/media/56112d_e7d3896cd4a8425491e9567b3d991002~mv2.png/v1/fill/w_157,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Picture3.png" alt="" /> */}
             </div>
         </div>
     )
