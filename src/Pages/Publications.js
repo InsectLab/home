@@ -20,7 +20,7 @@ const Publications = () => {
 
     return (
         <div className={`publicaionsWrraper ${darkMode ? "publicaionsWrraperDark" : ""}`}>
-            <h1>Publications</h1>
+            <h1>Selected publications</h1>
             <div className="articlesListWrraper">
                 {temp && temp.map((article) => {
                     return (

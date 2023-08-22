@@ -7,6 +7,15 @@
     gap: 60px;
 }
 
+.memberWrapper ul {
+    list-style: none;
+}
+
+/* .memberWrapper li {
+    display: flex;
+    align-items: center;
+} */
+
 .memberWrapper .back {
     position: absolute;
 }
@@ -46,9 +55,14 @@
 }
 
 .profileCard .name {
-    font-size: 20px;
+    font-size: 28px;
     font-weight: 700;
 }
+
+.profileCard .role, .profileCard .shortSummary {
+    font-size: 22px;
+}
+
 
 .profileCard .socials{
     display: flex;
@@ -68,6 +82,10 @@
 }
 .profileContent .contact {
     margin-bottom: 30px;
+}
+
+.profileContent .contact li {
+    font-size: 20px;
 }
 
 .profileContent .contact span {

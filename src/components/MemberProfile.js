@@ -85,7 +85,7 @@ const MemberProfile = () => {
                                 <ul>
                                     {(member.Interests.split(";")).map((x) => {
                                         return (
-                                            <li>{x}</li>
+                                            <li><span class="material-symbols-outlined">cognition</span>{x}</li>
                                         )
                                     })}
                                 </ul>
@@ -94,13 +94,10 @@ const MemberProfile = () => {
                                 <h2>Education</h2>
                                 <ul>
 
-                                    {console.log("education1 " + typeof(education))}
-                                    {console.log("education " + member.Education.match(/\[(.*?)\]/))}
-                                    {/* {console.log("education2" + education)} */}
                                     {member.Education.match(/\[[^\]]*\]/g).map((education) => {
                                         return (
                                             <li>
-                                                {education.slice(1, -1)}
+                                                <span className="material-symbols-outlined">school</span>{education.slice(1, -1)}
                                             </li>
                                         )
                                     })}

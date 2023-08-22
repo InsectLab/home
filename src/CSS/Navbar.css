@@ -22,6 +22,11 @@ a, a:visited {
     color: rgb(234, 234, 234);
 }
 
+.navbar .mainLogo img{
+    border-radius: 50%;
+    height: 100%;
+}
+
 .navbar .links {
     display: flex;
     flex-direction: row;
@@ -52,7 +57,7 @@ a, a:visited {
     background-color: #282834 !important;
 }
 
-.logo {
+.logo, .mainLogo {
     height: 75%;
     object-fit: cover;
     padding: 0 15px;
