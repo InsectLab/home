@@ -26,11 +26,11 @@ function App() {
         <div className={`${darkMode ? "bodyDark" : "body"}`}>
           <Routes>
             <Route path='/*' Component={Home} />
-            <Route path='/research/*' Component={Research} />
+            <Route path='/research' Component={Research} />
             <Route path='/publications' Component={Publications} />
             <Route path='/members/*' Component={Members} />
             <Route path='/contact' Component={Contact} />
-            <Route path='/positions' Component={Test} />
+            {/* <Route path='/positions' Component={Test} /> */}
           </Routes>
         </div>
       </div>

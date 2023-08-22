@@ -1,17 +1,24 @@
-import { Route, Routes } from 'react-router-dom';
-
-import ResearchList from '../components/ResearchList';
-import ResearchPage from '../components/ResearchPage';
-
+import ResearchItem from '../components/ResearchItem';
 import '../CSS/Reserch.css'
+import { useContext } from 'react';
+import { DBContext } from '../context/DBContext';
 
 const Research = () => {
+
+    const { researches } = useContext(DBContext);
+    console.log("researches: " + researches)
+
     return(
-        <Routes>
-            <Route path='/' Component={ResearchList} />
-            <Route path='/:id' Component={ResearchPage} />
-        </Routes>
+        <div className="reserchWrapper">
+            <div className='listWrraper'>
+                {researches && researches.map((research) => {
+                    return (
+                        <ResearchItem research={research}/>
+                    )
+                })}
+            </div>
+        </div>
     )
 }
     
-    export default Research;
+export default Research;

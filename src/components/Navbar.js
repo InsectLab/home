@@ -30,7 +30,7 @@ const Navbar = () => {
                 <NavLink to={"/publications"}><span>Publications</span></NavLink>
                 <NavLink to={"/members"}><span>Lab members</span></NavLink>
                 <NavLink to={"/contact"}><span>Contact</span></NavLink>
-                <NavLink to={"/positions"}><span>Open posiotions</span></NavLink>
+                {/* <NavLink to={"/positions"}><span>Open posiotions</span></NavLink> */}
             </div>                
             <div className="logo"><Link to="https://en-lifesci.tau.ac.il/" target='_blank'><img src='https://www.aftau.org/wp-content/uploads/2020/07/Wise.png' alt=''></img></Link></div>
             <div className='darkModeSwitch' onClick={darkModeSwitch}>
