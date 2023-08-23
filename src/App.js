@@ -22,6 +22,7 @@ function App() {
       <div className={`${darkMode ? "AppDark" : "App"}`}>
         <div className="header">
           <Navbar />
+          <div className='placeHolder'></div>
         </div>
         <div className={`${darkMode ? "bodyDark" : "body"}`}>
           <Routes>

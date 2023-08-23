@@ -11,6 +11,8 @@ a, a:visited {
 
 .navbar {
     display: flex;
+    position: fixed;
+    z-index: 99999;
     justify-content: space-between;
     background-color: rgb(254, 254, 254);
     width: 100%;
@@ -72,7 +74,12 @@ a, a:visited {
     filter: invert(100%);
 }
 
-.navbar > span {
+.logoNname {
+    display: flex;
+    flex-direction: row;
+}
+
+.logoNname span {
     margin: auto 0;
     font-size: 24px;
     font-weight: 700;

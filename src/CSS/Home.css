@@ -1,10 +1,7 @@
 .homeWrapper {
     display: flex;
     flex-direction: column;
-}
-
-.homeWrapper h1 {
-    margin: 30px auto;
+    padding: 20px 0;
 }
 
 .slider {

@@ -22,8 +22,10 @@ const Navbar = () => {
     }
     return (
         <div className={`${darkMode ? "navbar navbarDark" : "navbar"}`}>
-            <div className="mainLogo"><Link to="/"><img src="https://lh3.googleusercontent.com/pw/AIL4fc8x8n1vKAjGs6h_kFGzmwPF5b9eGTPIrASNiHrkH3pAl8I2Zk0q9kFUaE82WAeSyQGUXYDBe5DRqw6hV5D5Em0VPZo18_i8O1zsbKW9a4SzCTBpUNHJRFhg8Gm3THwVREJVl-vPTQRCvBAdrYi_V4Zx=w423-h423-s-no?authuser=0" alt="1" /></Link></div>
-            <span>Insect Lab@TAU</span>
+            <div className='logoNname'>
+                <div className="mainLogo"><Link to="/home"><img src="https://lh3.googleusercontent.com/pw/AIL4fc8x8n1vKAjGs6h_kFGzmwPF5b9eGTPIrASNiHrkH3pAl8I2Zk0q9kFUaE82WAeSyQGUXYDBe5DRqw6hV5D5Em0VPZo18_i8O1zsbKW9a4SzCTBpUNHJRFhg8Gm3THwVREJVl-vPTQRCvBAdrYi_V4Zx=w423-h423-s-no?authuser=0" alt="1" /></Link></div>
+                <span>Insect Lab@TAU</span>
+            </div>
             <div className="links">
                 <NavLink to={"/home"}><span>Home</span></NavLink>
                 <NavLink to={"/research"}><span>Research</span></NavLink>

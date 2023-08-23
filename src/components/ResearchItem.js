@@ -56,6 +56,7 @@ const ResearchItem = ({research}) => {
                         <img src={research.Image_2} alt="" />
                     </div>}
                 <div className="itemContent">
+                    <span className="title">{research.Title}</span>
                     <span className="caption">{research.Caption_2}</span>
                 </div>
             </div>}
@@ -66,6 +67,7 @@ const ResearchItem = ({research}) => {
                         <img src={research.Image_3} alt="" />
                     </div>}
                 <div className="itemContent">
+                    <span className="title">{research.Title}</span>
                     <span className="caption">{research.Caption_3}</span>
                 </div>
             </div>}    

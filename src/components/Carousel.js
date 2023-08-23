@@ -36,9 +36,8 @@ const Carousel = () => {
                     {images.map((img, i) => {
                         return (
                             <div key={i} className={i === currentIndex ? "carouselItem activeImg" : "carouselItem"}>
-                                {console.log(currentIndex)}
                                 <img src={img.Image} alt={img.Caption} />
-                                <div className="caption"><span>{img.Caption}</span></div>
+                                {img.Caption && <div className="caption"><span>{img.Caption}</span></div>}
                             </div>
                         )
                     })}

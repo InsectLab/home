@@ -78,6 +78,8 @@
 .prevItem, .nextItem {
     position: absolute;
     top: 50%;
+    cursor: pointer;
+    user-select: none;
 }
 
 .prevItem {

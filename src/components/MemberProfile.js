@@ -10,6 +10,8 @@ import Email from "../assets/Email";
 import Linkedin from "../assets/Linkedin";
 import ORCID from "../assets/ORCID";
 import Personal from "../assets/Personal";
+import PublicationList from "./PublicationList";
+import Back from '../assets/Back';
 
 import '../CSS/MemberProfile.css'
 
@@ -28,8 +30,6 @@ const MemberProfile = () => {
 
     const {members} = useContext(DBContext);
     const [member, setMember] = useState();
-    const [Publications, setPublications] = useState("");
-    const [education, setEducation] = useState("");
 
     const { id } = useParams();
 
@@ -37,18 +37,9 @@ const MemberProfile = () => {
         members && setMember(members[id]);
     },[members]);
 
-    useEffect(() => {
-        member && setPublications(BibtexParser.parseToJSON(member.Publications));
-        /* member && console.log(member.Publications); */
-        member && console.log("Members:", member.Publications);
-        member && setEducation(member.Education);
-    }, [member])
-
-
     return(
         <div className="memberWrapper">
-
-            <Link className="back" to={"/members"}><span>See all members</span></Link>
+            <Link className="back" to={"/members"}><Back color={svgColor}/><span>See all members</span></Link>
             {member &&
             <>
                 <div className="profile">
@@ -85,19 +76,18 @@ const MemberProfile = () => {
                                 <ul>
                                     {(member.Interests.split(";")).map((x) => {
                                         return (
-                                            <li><span class="material-symbols-outlined">cognition</span>{x}</li>
+                                            <li><span class="material-symbols-outlined interestsIcon">cognition</span>{x}</li>
                                         )
                                     })}
                                 </ul>
                             </div>}
                             {member.Education && <div className="education">
-                                <h2>Education</h2>
+                                <h1>Education</h1>
                                 <ul>
-
                                     {member.Education.match(/\[[^\]]*\]/g).map((education) => {
                                         return (
                                             <li>
-                                                <span className="material-symbols-outlined">school</span>{education.slice(1, -1)}
+                                                <span className="material-symbols-outlined educationIcon">school</span>{education.slice(1, -1)}
                                             </li>
                                         )
                                     })}
@@ -107,18 +97,10 @@ const MemberProfile = () => {
                     </div>
                 </div>
 
-
                 {member.Publications && <div className="publish">
                     <h1>Latest</h1>
-                    <ul>
-                        {Publications && Publications.map((item) => {
-                            return (
-                                <li>
-                                    {item.title}
-                                </li>
-                            )
-                        })}
-                    </ul>        
+                    {/* {member.Publications && console.log("member.Publications " + member.Publications)}  */}     
+                    {member.Publications && <PublicationList Publications={member.Publications}/>}      
                 </div>}
             </>
             }

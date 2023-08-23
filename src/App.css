@@ -11,6 +11,10 @@
   min-height: 100vh;
 }
 
+.App .placeHolder, .AppDark .placeHolder {
+  height: 60px;
+}
+
 .AppDark {
   text-align: center;
   min-height: 100vh;
@@ -37,6 +41,10 @@
   margin: 0;
   background-color: #19191b;
   min-height: 100vw;
+}
+
+.App header {
+  position: fixed;
 }
 
 .AppDark body {

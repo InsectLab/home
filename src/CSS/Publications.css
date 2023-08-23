@@ -1,4 +1,4 @@
-.publicaionsWrraper {
+.publicationList {
     width: 65%;
     margin: auto;
 }
@@ -25,12 +25,12 @@
     font-size: 24px;
 }
 
-.authorName {
+.publicationListWrapper .authorName {
     border-bottom: 1px solid black;
     margin-right: 10px;
 }
 
-.publicaionsWrraperDark .authorName {
+.publicationListWrapperDark .authorName {
     border-bottom: 1px solid white;
 }
 
