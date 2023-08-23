@@ -16,3 +16,74 @@
 .wantedWrapper {
     margin: auto;
 }
+
+/* Open positions */
+
+.wantedWrapper h1 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.positions {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+}
+
+.positionWrapper {
+    flex-shrink: 0;
+    background-color: white;
+    border-radius: 20px;
+    flex: 1;
+    flex-grow: 1;
+
+    box-shadow: 10px 10px 157px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 157px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 157px 0px rgba(0,0,0,0.75);
+
+}
+
+.positionWrapperDark {
+    background-color: #282834;
+
+    box-shadow: 10px 10px 157px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 157px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 157px 0px rgba(0,0,0,0.75);
+
+}
+
+.positionDetails {
+    padding: 10px 35px;
+}
+
+.positionInfo {
+    background-color: rgb(126, 197, 255);
+    text-align: center;
+    /* min-width: 200px; */
+}
+
+.positionWrapperDark .positionInfo {
+    background-color: #393c47;
+}
+
+.positionInfo .positionTitle {
+    font-size: 24px;
+    font-weight: 700;
+    min-height: 100px;
+    padding: 10px 0;
+}
+
+.positionDesciption {
+    padding: 10px 25px;
+}
+
+.seperator {
+    border: 1px solid black;
+    width: 90%;
+    margin: auto;
+    border-radius: 50%;
+}

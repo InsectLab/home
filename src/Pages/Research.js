@@ -10,7 +10,7 @@ const Research = () => {
 
     return(
         <div className="reserchWrapper">
-            <h1>Researches</h1>
+            <h1>Research topics</h1>
             <div className='listWrraper'>
                 {researches && researches.map((research) => {
                     return (

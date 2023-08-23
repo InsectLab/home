@@ -2,13 +2,11 @@ import { useState, useContext, useEffect } from 'react';
 
 import '../CSS/carousel.css';
 
-import { DBContext } from '../context/DBContext';
 import {ThemeContext} from '../context/ThemeContext';
 
-const Carousel = () => {
+const Carousel = ({images}) => {
 
     const {darkMode} = useContext(ThemeContext);
-    const {images} = useContext(DBContext);
 
     let timeOut = null
 

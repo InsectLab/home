@@ -8,21 +8,22 @@ import '../CSS/Home.css';
 
 const Home = () => {
 
-    const { positions } = useContext(DBContext);
+    const { positions, images } = useContext(DBContext);
     /* positions && console.log("positions: " + JSON.stringify(positions)) */
     return (
         <div className="homeWrapper">
             <div className="slider">
-                <Carousel />
+                {images && <Carousel images={images}/>}
             </div>
             <div className='wantedWrapper'>
                 <h1>Open positions</h1>
-                {positions && positions.map((position) => {
-                positions && console.log("position: " + JSON.stringify(position))
-                    return (
-                        <OpenPosition position/>
-                    )
-                })}
+                <div className='positions'>
+                    {positions && positions.map((position) => {
+                        return (
+                            <OpenPosition position={position}/>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )
