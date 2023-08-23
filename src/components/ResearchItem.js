@@ -53,10 +53,11 @@ const ResearchItem = ({research}) => {
             {(research.Image_2 || research.Caption_2) && <div className={`listItem ${currentItem === 2 ? "" : "noteActive"}`}>
                 {research.Image_2 && 
                     <div className="itemImage">
-                        <img src={research.Image_2} alt="" />
+                        <img src={research.Image_2 ? research.Image_2 : "https://static.wixstatic.com/media/56112d_677557a98a2d402a8c096058b3a639cf~mv2.jpg/v1/fill/w_414,h_299,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/locusts3_JPG.jpg"} alt="" />
                     </div>}
                 <div className="itemContent">
                     <span className="title">{research.Title}</span>
+                    <br />
                     <span className="caption">{research.Caption_2}</span>
                 </div>
             </div>}
@@ -64,10 +65,11 @@ const ResearchItem = ({research}) => {
             {(research.Image_3 || research.Caption_3) && <div className={`listItem ${currentItem === 3 ? "" : "noteActive"}`}>
                 {research.Image_3 && 
                     <div className="itemImage">
-                        <img src={research.Image_3} alt="" />
+                        <img src={research.Image_3 ? research.Image_3 : "https://static.wixstatic.com/media/56112d_677557a98a2d402a8c096058b3a639cf~mv2.jpg/v1/fill/w_414,h_299,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/locusts3_JPG.jpg"} alt="" />
                     </div>}
                 <div className="itemContent">
                     <span className="title">{research.Title}</span>
+                    <br />
                     <span className="caption">{research.Caption_3}</span>
                 </div>
             </div>}    

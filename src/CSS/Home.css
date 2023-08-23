@@ -12,3 +12,7 @@
     flex-direction: column;
     width: 70vw;
 }
+
+.wantedWrapper {
+    margin: auto;
+}

@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 
 import '../CSS/carousel.css';
 
@@ -10,6 +10,9 @@ const Carousel = () => {
     const {darkMode} = useContext(ThemeContext);
     const {images} = useContext(DBContext);
 
+    let timeOut = null
+
+    const [autoPlay , setAutoPlay] = useState((true))
     const [currentIndex, setCurrentIndex] = useState(0)
     const increaseIndex = () => {
         if (currentIndex === (images.length -1)) {
@@ -27,9 +30,14 @@ const Carousel = () => {
         }
     }
 
+    useEffect(() => {
+        timeOut = autoPlay && setTimeout(() => {
+            increaseIndex()
+        }, 2500)
+    })
 
     return (
-        <div className={`"carouselWrapper" ${darkMode ? "carouselWrapper carouselWrapperDark" : "carouselWrapper"}`}>
+        <div className={`"carouselWrapper" ${darkMode ? "carouselWrapper carouselWrapperDark" : "carouselWrapper"}`} onMouseEnter={() => {setAutoPlay(false);clearTimeout(timeOut)}} onMouseLeave={() => {setAutoPlay(true)}}>
             
             <div className="carousel">
                 {images && <div className="imagesList">

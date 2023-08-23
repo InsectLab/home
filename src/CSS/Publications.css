@@ -1,6 +1,13 @@
-.publicationList {
+.publicationsWrapper {
     width: 65%;
     margin: auto;
+}
+
+.publicationsTitle {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 20px 0;
 }
 
 .publicaionsWrraper h1 {
@@ -14,10 +21,6 @@
     flex-direction: column;
     text-align: left;
     padding: 20px 0;
-}
-
-.articleItem {
-    position: relative;
 }
 
 .articleTitle {
@@ -40,5 +43,4 @@
 
 .articleAuthor {
     display: block;
-    
 }

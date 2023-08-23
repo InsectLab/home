@@ -16,6 +16,17 @@ export const DBContextProvider = ({ children }) => {
             }
         })
     },[])
+    
+    const [positions, setPositions] = useState();
+    useEffect(() => {
+        Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vTrx5a6lcEqohu2wlApKa6DnPUmNRfYoUkRXjajieoF7PyPOrGKKQeqiROrECNHKPXAYMKZfMrLNwaB/pub?gid=157085250&single=true&output=csv", {
+            download: true,
+            header: true,
+            complete: (results) => {
+                setPositions(results.data);
+            }
+        })
+    },[])
 
     const [researches, setResearches] = useState();
     useEffect(() => {
@@ -54,7 +65,7 @@ export const DBContextProvider = ({ children }) => {
 
     return (
         <DBContext.Provider value={{
-            images, researches, members, publications
+            images, positions, researches, members, publications
         }}>{ children }
         </DBContext.Provider>
     )
