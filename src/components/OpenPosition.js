@@ -12,9 +12,9 @@ const OpenPosition = ({position}) => {
                 </div>
                 <div className="positionDetails">
                     <ul>
-                        {position.Type && <li><b>Type:</b> {position.Type}</li>}
-                        {position.Start_Date && <li><b>Start date:</b> {position.Start_Date}</li>}
-                        {position.Duration && <li><b>Duration:</b> {position.Duration}</li>}
+                        <li style={{ opacity: position.Type ? '1' : '0', userSelect: position.Type ? "" : "none" }}><b>Type:</b> {position.Type}</li>
+                        <li style={{ opacity: position.Start_Date ? '1' : '0', userSelect: position.Start_Date ? "" : "none" }}><b>Start date:</b> {position.Start_Date}</li>
+                        <li style={{ opacity: position.Duration ? '1' : '0', userSelect: position.Duration ? "" : "none" }}><b >Duration:</b> {position.Duration}</li>
                     </ul>
                 </div>
                 <div className="seperator"></div>

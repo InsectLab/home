@@ -12,7 +12,7 @@ const Publications = () => {
     
     return (
         <div className="publicationsWrapper">
-            <span className="publicationsTitle">Latest publications</span>
+            <span className="publicationsTitle">Selected publications</span>
             <div className={`publicationList ${darkMode ? "publicationListDark" : ""}`}>
                 {publications && <PublicationList Publications={publications}/>}
             </div>
