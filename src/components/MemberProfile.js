@@ -31,10 +31,10 @@ const MemberProfile = () => {
     const {members} = useContext(DBContext);
     const [member, setMember] = useState();
 
-    const { id } = useParams();
+    const { name } = useParams();
 
     useEffect(() => {
-        members && setMember(members[id]);
+        members && setMember(members.find(item => item.Name === name));
     },[members]);
 
     return(

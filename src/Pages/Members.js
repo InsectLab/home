@@ -7,7 +7,7 @@ const Members = () => {
     return(
         <Routes>
             <Route path='/' Component={MembersList} />
-            <Route path='/profile/:id' Component={MemberProfile} />
+            <Route path='/profile/:name' Component={MemberProfile} />
         </Routes>
     );
 }
