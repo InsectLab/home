@@ -34,6 +34,7 @@ function App() {
             {/* <Route path='/positions' Component={Test} /> */}
           </Routes>
         </div>
+        <div className='credit'>Made with ♥ by Roei =]</div>
       </div>
     </Router>
   );

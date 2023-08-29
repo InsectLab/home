@@ -6,7 +6,6 @@ import { DBContext } from '../context/DBContext';
 const Research = () => {
 
     const { researches } = useContext(DBContext);
-    console.log("researches: " + researches)
 
     return(
         <div className="reserchWrapper">

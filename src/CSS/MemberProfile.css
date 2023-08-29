@@ -81,9 +81,10 @@
     height: 40px;
 }
 
-.CV h1 {
-    font-size: 28px;
+.education p, .interests p {
+    font-size: 32px;
     font-weight: 700;
+    margin-bottom: 15px;
 }
 
 .profileContent {
@@ -122,12 +123,11 @@
 }
 
 .education li, .interests li {
-    position: relative;
+    display: flex;
     margin-bottom: 10px;
 }
 
 .educationIcon, .interestsIcon {
-    position: absolute;
     margin-right: 3px;
     left: -30px;
 }

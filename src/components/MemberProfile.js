@@ -34,7 +34,7 @@ const MemberProfile = () => {
     const { name } = useParams();
 
     useEffect(() => {
-        members && setMember(members.find(item => item.Name === name));
+        members && setMember(members.find(item => item.Name === name.replace("-", " ")));
     },[members]);
 
     return(
@@ -44,7 +44,7 @@ const MemberProfile = () => {
             <>
                 <div className="profile">
                     <div className="profileCard">
-                        <img src={`${member.Photo ? member.Photo : "https://static.wixstatic.com/media/56112d_1efe4d20db6249f1a5876256376aabbc~mv2.gif"}`} alt="" />
+                        <img src={`${member.Photo ? member.Photo : "https://lh3.googleusercontent.com/pw/AIL4fc8x8n1vKAjGs6h_kFGzmwPF5b9eGTPIrASNiHrkH3pAl8I2Zk0q9kFUaE82WAeSyQGUXYDBe5DRqw6hV5D5Em0VPZo18_i8O1zsbKW9a4SzCTBpUNHJRFhg8Gm3THwVREJVl-vPTQRCvBAdrYi_V4Zx=w423-h423-s-no?authuser=0"}`} alt="" />
                         <div className="name">{`${member.Title === "Professor" ? "Prof." : member.Title === "Doctor" ? "Dr." : ""} ${member.Name}`}</div>
                         <br/>
                         <div className="role">{member.Role}</div>
@@ -61,7 +61,19 @@ const MemberProfile = () => {
                     </div>
                     
                     <div className="profileContent">
-                        <div className="info">{member.Long_Summary}</div>
+                        {/* <span className="info">{member.Long_Summary}</span> */}
+                        {console.log("1: " + JSON.stringify(member.Long_Summary))}
+                        <div className="info">
+                            {(JSON.stringify(member.Long_Summary).slice(1, -1)).split('\\n\\n').slice().map((p) => {
+                                return (
+                                    <>
+                                        <p>{p}</p>
+                                        <br/>
+                                    </>
+                                    
+                                )
+                            })}
+                        </div>
                         
                         {member.Email && <div className="contact">
                             <h1>Contact details</h1>
@@ -72,7 +84,7 @@ const MemberProfile = () => {
 
                         <div className="CV">
                             {member.Interests && <div className="interests">
-                                <h1>Interests</h1>
+                                <p>Interests</p>
                                 <ul>
                                     {(member.Interests.split(";")).map((x) => {
                                         return (
@@ -82,7 +94,7 @@ const MemberProfile = () => {
                                 </ul>
                             </div>}
                             {member.Education && <div className="education">
-                                <h1>Education</h1>
+                                <p>Education</p>
                                 <ul>
                                     {member.Education.match(/\[[^\]]*\]/g).map((education) => {
                                         return (

@@ -1,6 +1,7 @@
 .reserchWrapper {
     width: 70%;
     margin: auto;
+    padding-bottom: 70px;
 }
 
 .reserchWrapper > h1 {

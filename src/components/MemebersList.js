@@ -73,10 +73,10 @@ const MembersList = () => {
                     return (
                         (member.Name.toLowerCase().includes(inputValue.toLowerCase()) && (RoleValue === "" || member.Role === RoleValue) && (activeValue === "" || ((activeValue === "Yes" && member.End_Year === "Current") || (activeValue === "No" && member.End_Year !== "Current")))) &&
                         <div className={`${darkMode ? "memberItem memberItemDark" : "memberItem"}`}>
-                            <div className='img'><img src={`${member.Photo ? member.Photo : "https://static.wixstatic.com/media/56112d_1efe4d20db6249f1a5876256376aabbc~mv2.gif"}`} alt="" /></div>
+                            <div className='img'><img src={`${member.Photo ? member.Photo : "https://lh3.googleusercontent.com/pw/AIL4fc8x8n1vKAjGs6h_kFGzmwPF5b9eGTPIrASNiHrkH3pAl8I2Zk0q9kFUaE82WAeSyQGUXYDBe5DRqw6hV5D5Em0VPZo18_i8O1zsbKW9a4SzCTBpUNHJRFhg8Gm3THwVREJVl-vPTQRCvBAdrYi_V4Zx=w423-h423-s-no?authuser=0"}`} alt="" /></div>
                             <div className="content">
                                 {/* <span className='name'>{member.Name}<p>&nbsp;{` (${member.Start_Year} - ${member.End_Year})`}</p></span> */}
-                                <Link to={`profile/${member.Name}`}><span className={`${darkMode ? "name nameDark" : "name"}`}>{`${member.Title === "Professor" ? "Prof." : member.Title === "Doctor" ? "Dr." : ""} ${member.Name} (${member.Start_Year} - ${member.End_Year})`}</span></Link>
+                                <Link to={`profile/${member.Name.replace(" ", "-")}`}><div className={`${darkMode ? "name nameDark" : "name"}`}><span>{`${member.Title === "Professor" ? "Prof." : member.Title === "Doctor" ? "Dr." : ""}`} <span>{member.Name}</span></span>{(member.Start_Year || member.End_Year) && <span>{` ( ${member.Start_Year} ${((member.Start_Year && member.End_Year) && " - ")} ${member.End_Year} )`}</span>}</div></Link>
                                 <span className='info'>
                                     <div className="role">{member.Role}</div>
                                     &nbsp;
@@ -98,7 +98,7 @@ const MembersList = () => {
                                     })}
                                 </div>
                             </div>
-                            <Link className={`goto ${darkMode ? "gotoDark" : ""}`} to={`profile/${member.Name}`}><span className="material-symbols-outlined">arrow_forward_ios</span></Link>
+                            <Link className={`goto ${darkMode ? "gotoDark" : ""}`} to={`profile/${member.Name.replace(" ", "-")}`}><span className="material-symbols-outlined">arrow_forward_ios</span></Link>
                             {/* <Link className={`goto ${darkMode ? "gotoDark" : ""}`} to={`profile/${i}`}>❯</Link> */}
                         </div>
                     )

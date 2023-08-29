@@ -5,19 +5,22 @@
 }
 
 .App {
+  position: relative;
   background-color: #f5f3ee;
   min-height: 100vh;
+}
+
+.AppDark {
+  position: relative;
+  min-height: 100vh;
+  background-color: #282834;
+  color: white;
 }
 
 .App .placeHolder, .AppDark .placeHolder {
   height: 60px;
 }
 
-.AppDark {
-  min-height: 100vh;
-  background-color: #282834;
-  color: white;
-}
 
 .App-header {
   background-color: #282c34;
@@ -48,6 +51,15 @@
   margin: 0;
   min-height: 100vw;
   background-color: #f5f3ee;
+}
+
+.credit {
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  font-size: 18px;
+  padding: 20px 0;
+  float: inline-end;
 }
 
 @keyframes App-logo-spin {

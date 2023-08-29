@@ -15,10 +15,14 @@ const PublicationList = (Publications) => {
         Publications && setTemp(BibtexParser.parseToJSON(Publications.Publications));
     }, [Publications])
 
-    temp && console.log("temp: " + temp);
+    temp && temp.sort(function(a, b) {
+        return b.year - a.year;
+    });
+
     return (
         <div className={`publicationListWrapper ${darkMode ? "publicationListWrapperDark" : ""}`}>
             <div className="articlesListWrraper">
+                
                 {temp && temp.map((article) => {
                     return (
                         <div className="articleItem">
