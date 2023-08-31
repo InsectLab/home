@@ -53,7 +53,9 @@
 
 .profileCard img {
     margin: 0 auto;
-    max-width: 80%;
+    /* max-width: 80%;
+    min-width: 80%; */
+    width: 80%;
     border-radius: 50%;
     object-fit: cover;
     aspect-ratio: 1/1; /* Maintain 1:1 aspect ratio for a perfect circle */
@@ -104,6 +106,7 @@
 }
 
 .profileContent .info {
+    min-height: 20em;
     font-size: 20px;
     margin-bottom: 30px;
 }

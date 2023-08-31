@@ -14,19 +14,18 @@
 }
 
 .wantedWrapper {
+    width: 80%;
     margin: auto;
 }
 
 /* Open positions */
 
 .wantedWrapper h1 {
-    text-align: center;
+    /* text-align: center; */
     padding: 20px 0;
 }
 
 .positions {
-    width: 80%;
-    margin: auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -56,14 +55,25 @@
 
 }
 
+.positionsInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 30px;
+}
+
+.positionTitle {
+    text-align: left;
+    padding: 0 35px;
+}
+
 .positionDetails {
     padding: 10px 35px;
 }
 
 .positionInfo {
     background-color: rgb(126, 197, 255);
-    text-align: center;
-    /* min-width: 200px; */
+    padding: 0 15px;
 }
 
 .positionWrapperDark .positionInfo {
@@ -71,7 +81,7 @@
 }
 
 .positionInfo .positionTitle {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     min-height: 100px;
     padding: 10px 0;

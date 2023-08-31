@@ -76,7 +76,7 @@ const MembersList = () => {
                             <div className='img'><img src={`${member.Photo ? member.Photo : "https://lh3.googleusercontent.com/pw/AIL4fc8x8n1vKAjGs6h_kFGzmwPF5b9eGTPIrASNiHrkH3pAl8I2Zk0q9kFUaE82WAeSyQGUXYDBe5DRqw6hV5D5Em0VPZo18_i8O1zsbKW9a4SzCTBpUNHJRFhg8Gm3THwVREJVl-vPTQRCvBAdrYi_V4Zx=w423-h423-s-no?authuser=0"}`} alt="" /></div>
                             <div className="content">
                                 {/* <span className='name'>{member.Name}<p>&nbsp;{` (${member.Start_Year} - ${member.End_Year})`}</p></span> */}
-                                <Link to={`profile/${member.Name.replace(" ", "-")}`}><div className={`${darkMode ? "name nameDark" : "name"}`}><span>{`${member.Title === "Professor" ? "Prof." : member.Title === "Doctor" ? "Dr." : ""}`} <span>{member.Name}</span></span>{(member.Start_Year || member.End_Year) && <span>{` ( ${member.Start_Year} ${((member.Start_Year && member.End_Year) && " - ")} ${member.End_Year} )`}</span>}</div></Link>
+                                <Link to={`profile/${member.Name.replace(" ", "-")}`}><div className={`${darkMode ? "name nameDark" : "name"}`}><span>{`${member.Title === "Professor" ? "Prof." : member.Title === "Doctor" ? "Dr." : ""}`} <span>{member.Name}</span></span>{(member.Start_Year || member.End_Year) && <span>{` (${member.Start_Year && member.Start_Year}${((member.Start_Year && member.End_Year) && " - ")}${member.End_Year})`}</span>}</div></Link>
                                 <span className='info'>
                                     <div className="role">{member.Role}</div>
                                     &nbsp;
@@ -91,9 +91,9 @@ const MembersList = () => {
                                 </span>  
                                 <div className="interest">
                                 <b style={{ opacity: member.Interests ? '1' : '0', userSelect: member.Interests ? "" : "none" }}>Interest: <>&nbsp;</></b> 
-                                    {member.Interests && member.Interests.split(";").map((interest) => {
+                                    {member.Interests && member.Interests.split(";").map((interest,i) => {
                                         return (
-                                            <span>{`${interest}`},&nbsp;</span>
+                                            <span>{`${interest}`}{`${member.Interests.split(";").length === i+1 ? "" : ","}`}&nbsp;</span>
                                         )
                                     })}
                                 </div>

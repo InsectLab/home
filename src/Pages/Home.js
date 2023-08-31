@@ -17,6 +17,11 @@ const Home = () => {
             </div>
             <div className='wantedWrapper'>
                 <h1>Open positions</h1>
+                <div className='positionsInfo'>
+                    <span>We are looking for talented BSc, MSc and PhD students from various scientific backgrounds to join our group.</span>
+                    <span>Methods used in our lab include electrophysiology, imaging, theoretical modelling and simulations, robotics and data analysis.</span>
+                    <span>To apply, please contact Amir Ayali at ayali@tauex.tau.ac.il.</span>
+                </div>
                 <div className='positions'>
                     {positions && positions.map((position) => {
                         return (

@@ -37,6 +37,7 @@ const ResearchItem = ({research}) => {
     return (
 
         <div className={`itemWrapper ${darkMode ? "dark" : "light"}`}>
+            <span className="itemCounter">{currentItem}/{items}</span>
             <a className="prevItem" onClick={decreaseIndex}><span className="material-symbols-outlined" style={{transform: "scaleX(-1)"}}>arrow_forward_ios</span></a>
             <a className="nextItem" onClick={increaseIndex}><span className="material-symbols-outlined">arrow_forward_ios</span></a>
             <div className={`listItem ${currentItem === 1 ? "" : "noteActive"}`}>                
