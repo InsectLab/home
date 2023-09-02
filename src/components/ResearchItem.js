@@ -47,7 +47,18 @@ const ResearchItem = ({research}) => {
                 <div className="itemContent">
                     <span className="title">{research.Title}</span>
                     <br />
-                    <span className="caption">{research.Caption_1}</span>
+                    <div className="caption">
+                        {(JSON.stringify(research.Caption_1).slice(1, -1)).split('\\n\\n').slice().map((p) => {
+                            return (
+                                <>
+                                    <p>{p}</p>
+                                    <br/>
+                                </>
+                                
+                            )
+                        })}
+                    </div>
+                    {/* <span className="caption">{research.Caption_1}</span> */}
                 </div>
             </div>
             

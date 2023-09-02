@@ -83,7 +83,7 @@
 }
 
 .itemContent .caption {
-    /* height: 80%; */
+    padding-right: 5px;
     overflow-y: auto;
 }
 
