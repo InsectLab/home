@@ -61,7 +61,6 @@ const MemberProfile = () => {
                     </div>
                     
                     <div className="profileContent">
-                        {/* <span className="info">{member.Long_Summary}</span> */}
                         {console.log("1: " + JSON.stringify(member.Long_Summary))}
                         <div className="info">
                             {(JSON.stringify(member.Long_Summary).slice(1, -1)).split('\\n\\n').slice().map((p) => {
@@ -99,7 +98,20 @@ const MemberProfile = () => {
                                     {member.Education.match(/\[[^\]]*\]/g).map((education) => {
                                         return (
                                             <li>
-                                                <span className="material-symbols-outlined educationIcon">school</span>{education.slice(1, -1)}
+                                                <span className="material-symbols-outlined educationIcon">school</span>
+                                                <span className='educationIcon'>
+                                                    {education.slice(1, -1).split(";").map((p,i) => {                                                
+                                                        if (i === 0) {
+                                                            return (
+                                                                <span style={{display: 'block'}}>{p}</span>
+                                                            )
+                                                        } else {
+                                                            return (
+                                                                <span style={{color: '#b2b2b2', display:'block'}}>{p}</span>
+                                                            )
+                                                        }
+                                                    })}
+                                                </span>
                                             </li>
                                         )
                                     })}
@@ -110,8 +122,7 @@ const MemberProfile = () => {
                 </div>
 
                 {member.Publications && <div className="publish">
-                    <h1>Latest</h1>
-                    {/* {member.Publications && console.log("member.Publications " + member.Publications)}  */}     
+                    <h1>Latest</h1>    
                     {member.Publications && <PublicationList Publications={member.Publications}/>}      
                 </div>}
             </>
