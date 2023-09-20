@@ -54,12 +54,13 @@
 }
 
 .credit {
-  position: absolute;
-  bottom: 0;
+/*   bottom: 0; */
+  text-align: center;
   left: 45%;
   font-size: 18px;
-  padding: 20px 0;
+  padding: 15px 0;
   float: inline-end;
+  /* border: 1px solid black; */
 }
 
 rect {
