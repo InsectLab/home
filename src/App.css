@@ -43,6 +43,10 @@
   min-height: 100vw;
 }
 
+.bodyDark, .body {
+  min-height: 80vh;
+}
+
 .App header {
   position: fixed;
 }

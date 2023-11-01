@@ -99,7 +99,6 @@ const MembersList = () => {
                                 </div>
                             </div>
                             <Link className={`goto ${darkMode ? "gotoDark" : ""}`} to={`profile/${member.Name.replace(" ", "-")}`}><span className="material-symbols-outlined">arrow_forward_ios</span></Link>
-                            {/* <Link className={`goto ${darkMode ? "gotoDark" : ""}`} to={`profile/${i}`}>❯</Link> */}
                         </div>
                     )
                 })}
